@@ -1,0 +1,27 @@
+<div class="d-flex flex-row bd-highlight mb-3">
+
+    <div class="form-group" style="width:60%;">
+        <label for="exampleInputEmail1">Book Name</label>
+        <input class="form-control" [(ngModel)]="BookName" name="SName" placeholder="Enter the new book name">
+
+        <label for="exampleInputEmail1">Section</label>
+        <select class="form-control" [(ngModel)]="SectionName" name="SName">
+            <option>--Select--</option>
+            <option *ngFor="let secName of SectionList">
+                {{secName.SectionName}}
+            </option>
+        </select>
+
+        <label for="exampleInputEmail1">Book Author</label>
+        <input class="form-control" [(ngModel)]="BookAuthor" name="SName" placeholder="Enter the new book Author">
+
+        <label for="exampleInputEmail1">Book Count</label>
+        <input class="form-control" [(ngModel)]="BookCount" name="SName" placeholder="Enter the new book Count">
+    </div>
+    <div class="ml-3 bd-highlight" style="width:40%;">
+        <img [src]="BookPhoto" height="250px;" width="200px;">
+        <input type="file" (change)="uploadPhoto($event)" class="mt-2">
+    </div>
+</div>
+<button (click)="addBook()" *ngIf="book.BookId==0" class="btn btn-primary">Add</button>
+<button (click)="updateBook()" *ngIf="book.BookId!=0" class="btn btn-primary">Update</button>

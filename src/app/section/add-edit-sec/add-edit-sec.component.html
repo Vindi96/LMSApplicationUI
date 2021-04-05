@@ -1,0 +1,11 @@
+<form>
+    <div class="form-group">
+        <label for="exampleInputEmail1">Section Name</label>
+        <input class="form-control" [(ngModel)]="SectionName" name="SName" placeholder="Enter the new Section name">
+
+    </div>
+
+    <button (click)="addSection()" *ngIf="sec.SectionId==0" class="btn btn-primary">Add</button>
+    <button (click)="updateSection()" *ngIf="sec.SectionId!=0" class="btn btn-primary">Update</button>
+
+</form>
